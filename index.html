@@ -9,9 +9,10 @@
     <script type="text/javascript" src="/js/lib/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="/js/lib/jquery.querystring.js"></script>
     <script type="text/javascript" src="/js/lib/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="/js/lib/easyui-validate-extend.js"></script>
     <script type="text/javascript" src="/js/lib/require.min.js" data-main="/js/main"></script>
 </head>
-<body class="easyui-layout">
+<body class="easyui-layout" onbeforeunload="checkleave()">
     <!-- header -->
     <div id="headerFrame" data-options="region:'north',border:false,collapsible:false,href:'views/frames/header.html'" style="height:80px;background:rgb(16, 93, 139);"></div>
     <!-- footer -->

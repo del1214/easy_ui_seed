@@ -28,4 +28,8 @@
 		});
 	});
 
+	// 单页app 防止误操作
+	window.onbeforeunload = function() {
+		return '确定要离开这个页面吗？';
+	}
 })(window, document, jQuery, require);

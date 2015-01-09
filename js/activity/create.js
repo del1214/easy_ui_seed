@@ -14,7 +14,7 @@ define(function() {
         var addWindow = function() {
             container.append('<div id="modalWindow"></div>');
             item = container.find('#modalWindow').window({
-                width: 588,
+                width: 400,
                 height: 300,
                 modal: true,
                 minimizable: false,
@@ -32,14 +32,45 @@ define(function() {
             bindEvent();
         };
 
-        // 绑定时间
+        // 绑定事件
         var bindEvent = function() {
             item.on('click', '[data-handle="window_close"]', function(event) {
                 item.window('close');
                 event.stopPropagation();
             });
+
+
+            item.on('click', '[data-handle="activity_create_submit"]', function(event) {
+                item.find('form').form('submit', {
+                    ajax: true,
+                    url: '/js/activity/submit.json',
+                    onSubmit: function(param) {
+                        var _item = $(this);
+                        if ($(this).form('validate')) {
+                            submitForm(_item);
+                        }
+                        return false;
+                    }
+                });
+                event.stopPropagation();
+            });
         };
 
+        var submitForm = function(form) {
+            $.ajax({
+                url: '/js/activity/submit.json',
+                type: 'get',
+                dataType: 'json',
+                data: form.serialize(),
+                success: function(res) {
+                    if (res.code == 1) {
+                        $.messager.alert('提示', '保存成功', null, function() {
+                            item.window('close');
+                        });
+                    }
+                }
+            });
+        };
         return {
             init: init
         };
