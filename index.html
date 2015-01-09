@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="/css/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/css/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script type="text/javascript" src="/js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery.querystring.js"></script>
+    <script type="text/javascript" src="/js/lib/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="/js/lib/require.min.js" data-main="/js/main"></script>
+</head>
+<body class="easyui-layout">
+    <!-- header -->
+    <div id="headerFrame" data-options="region:'north',border:false,collapsible:false,href:'views/frames/header.html'" style="height:80px;background:rgb(16, 93, 139);"></div>
+    <!-- footer -->
+    <div id="footerFrame" data-options="region:'south',border:false,href:'views/frames/footer.html'" style="height:20px;background:rgb(16, 93, 139);"></div>
+    <!-- 右侧栏 -->
+    <div id="rightFrame" data-options="region:'east',split:true,collapsed:true,title:'消息',href:'views/frames/right.html'" style="width:100px;padding: 10px"></div>
+    <!-- 左侧栏 -->
+    <div id="leftFrame" data-options="region:'west',border:false,split:true,href:'views/frames/left.html'" style="width:200px;"></div>
+    <!-- 中部 -->
+    <div id="centerFrame" data-options="region:'center',border:false">
+        <div id="centerTabs" class="easyui-tabs" data-options="fit:true,border:false">
+            <div title="欢迎" style="padding:10px;">
+                你好
+            </div>
+        </div>
+    </div>
+</body>
+</html>

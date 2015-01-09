@@ -1,0 +1,58 @@
+<div>
+    <form method="post" id="createForm">
+        <div class="clearfix">
+            <div class="group w280 fl">
+                <label for="parent.id" class="txt-name">父分类：</label>
+                <select data-options="required:true,editable:false" class="easyui-combobox" name="parent.id" id="parent.id">
+                    <option value="1">请选择父分类..</option>
+                    <option value="2">A</option>
+                    <option value="3">B</option>
+                    <option value="4">C</option>
+                    <option value="5">D</option>
+                </select>
+            </div>
+            <div class="group w280 fl">
+                <label for="status" class="txt-name">状态：</label>
+                <select class="easyui-combobox easyui-validatebox " name="status" id="status" data-options="required:true,editable:false">
+                    <option value="" class="">请选择状态</option>
+                    <option value="BOTH_VISIBLE">全部可见</option>
+                    <option value="PC_VISIBLE">仅PC可见</option>
+                    <option value="APP_VISIBLE">仅移动App可见</option>
+                    <option value="INVISIBLE">都不可见</option>
+                </select>
+            </div>
+            <div class="group w280 fl clear">
+                <label for="code" class="txt-name">编码：</label>
+                <input class="easyui-validatebox txt-short" name="code" id="code" type="text" value="" data-options="required:true">
+            </div>
+            <div class="group w280 fl">
+                <label for="name" class="txt-name">中文名称：</label>
+                <input class="easyui-validatebox txt-short" name="name" id="name" type="text" value="" data-options="required:true">
+            </div>
+            <div class="group w280 fl clear">
+                <label for="englishName" class="txt-name">英文名称：</label>
+                <input class="easyui-validatebox txt-short" type="text" name="englishName" id="englishName" value="">
+            </div>
+            <div class="group w280 fl">
+                <label for="keyword" class="txt-name">关键词：</label>
+                <input class="easyui-validatebox txt-short" name="keyword" id="keyword" type="text" value="">
+            </div>
+
+            <div class="group w280 fl clear lh30">
+                <label class="txt-name">显示库存：</label>
+                <label class="lh34">
+                    <input type="radio" name="stockVisible" value="true" checked class="check">显示
+                    <input type="radio" name="stockVisible" value="false" class="check">不显示
+                </label>
+            </div>
+            <div class="group w280 fl">
+                <label for="displayOrder" class="txt-name">排序值：</label>
+                <input class="easyui-validatebox txt-short" name="displayOrder" id="displayOrder" type="text" value="" data-options="required:true">
+            </div>
+        </div>
+        <div class="group fl" style=" width: 100%; margin-top: 30px; text-align: center;">
+            <button class=" btn-add" type="button" id="create_catalog">保存</button>
+            <button data-handle="window_close" class=" btn-add" type="button" id="create_cancel">取消</button>
+        </div>
+    </form>
+</div>

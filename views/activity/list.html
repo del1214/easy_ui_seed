@@ -1,0 +1,43 @@
+<div>
+    <div id="activity_search" style="padding:5px;height:auto">
+        <form>
+            <div class="clearfix">
+                <div class="fl pd5 mr20">活动名称:
+                    <input class="easyui-textbox" name="activityName" value="">
+                </div>
+                <div class="fl pd5 mr20">活动状态:
+                    <select data-options="editable:false" class="easyui-combobox" panelHeight="auto" style="width:100px" name="status">
+                        <option value="">全部</option>
+                        <option value="DRAFT">草稿</option>
+                        <option value="AUDIT">审批中</option>
+                        <option value="READY_LIST">待上架</option>
+                        <option value="REFUSE">已拒绝</option>
+                        <option value="LIST">已上架</option>
+                        <option value="DELIST">已下架</option>
+                        <option value="DISCARD">已作废</option>
+                    </select>
+                </div>
+                <div class="fl pd5 mr20"> 活动类型:
+                    <select data-options="editable:false" class="easyui-combobox" panelHeight="auto" style="width:100px" name="type">
+                        <option value="">全部</option>
+                        <option value="SCRAPE_CARD">刮刮卡</option>
+                        <option value="AUCTION">竞拍</option>
+                    </select>
+                </div>
+
+                <div class="fl pd5 mr20">
+                    开始时间:
+                    <input name="birthday" class="easyui-datetimebox" data-options="showSeconds:true" value="" style="width:150px">
+                </div>
+                <div class="fl pd5 mr20">
+                    <a id="activity_search" data-handle="activity_search" href="javascript:;" class="easyui-linkbutton" iconCls="icon-search">搜索</a>
+                </div>
+            </div>
+            <div>
+                <a data-handle="activity_create" href="javascript:;" data-title="添加新活动" class="easyui-linkbutton" iconCls="icon-add" plain="true">添加新活动</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<table id="activityList"></table>
