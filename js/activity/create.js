@@ -34,18 +34,20 @@ define(function() {
 
         // 绑定事件
         var bindEvent = function() {
+            // 点击关闭
             item.on('click', '[data-handle="window_close"]', function(event) {
                 item.window('close');
                 event.stopPropagation();
             });
 
-
+            // 点击提交
             item.on('click', '[data-handle="activity_create_submit"]', function(event) {
                 item.find('form').form('submit', {
                     ajax: true,
                     url: '/js/activity/submit.json',
                     onSubmit: function(param) {
                         var _item = $(this);
+                        // 此方法只能验证表单里的内容，其他特殊的需要自己写
                         if ($(this).form('validate')) {
                             submitForm(_item);
                         }
@@ -56,6 +58,7 @@ define(function() {
             });
         };
 
+        // 提交方法
         var submitForm = function(form) {
             $.ajax({
                 url: '/js/activity/submit.json',
