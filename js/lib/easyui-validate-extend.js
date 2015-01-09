@@ -30,6 +30,7 @@ if ($.fn.validatebox) {
             },
             message: '请输入合法的手机号'
         },
+        // 下拉菜单为空  默认约定为请选择一项
         comboBoxEmpty: {
             validator: function(value) {
                 return value !== '请选择一项';
